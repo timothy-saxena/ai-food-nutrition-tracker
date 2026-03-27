@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from app.db.database import engine
-from app.models import meal
+
+from .db.database import engine
+from .models import meal
 
 meal.Base.metadata.create_all(bind=engine)
 app = FastAPI(
